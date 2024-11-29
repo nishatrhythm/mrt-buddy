@@ -46,9 +46,10 @@ export const Hero = ({ handleDownloadClick, isAnimating }) => {
             </a>
           </div>
           <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
-            Android version is currently in beta. You can either download the APK file directly or sign up for the Play Store Beta to receive automatic updates.
-            <br />Google may approve our app end of this month.
-          </p>
+             <Link href="/devices" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+               Check if your device is compatible →
+             </Link>
+           </p>
           <div className="mt-6 inline-block">
             <Link
               href="/tutorials"
