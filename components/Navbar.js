@@ -1,4 +1,4 @@
-import { MoonIcon, SunIcon } from "@heroicons/react/20/solid";
+import { MoonIcon, SunIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -6,6 +6,7 @@ import { useTheme } from "../contexts";
 
 export const StickyNavbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isHelpOpen, setIsHelpOpen] = useState(false);
   const { isDarkMode, toggleDarkMode } = useTheme();
   const router = useRouter();
 
@@ -40,19 +41,23 @@ export const StickyNavbar = () => {
     };
   }, [isNavOpen]);
 
-  const navLinks = [
+  const mainNavLinks = [
     { href: "/", label: "Home" },
     { href: "/#download", label: "Download" },
-    { href: "/tutorials", label: "Tutorials" },
     { href: "/contributors", label: "Contributors" },
-    { href: "/faq", label: "FAQ" },
-    { href: "/support", label: "Support" },
-    { href: "/privacy-policy", label: "Privacy Policy" },
     {
       href: "http://github.com/aniruddha-adhikary/mrt-buddy",
       label: "GitHub",
       external: true,
     },
+  ];
+
+  const helpNavLinks = [
+    { href: "/tutorials", label: "Tutorials" },
+    { href: "/faq", label: "FAQ" },
+    { href: "/support", label: "Support" },
+    { href: "/devices", label: "Supported Devices" },
+    { href: "/privacy-policy", label: "Privacy Policy" },
   ];
 
   return (
@@ -70,7 +75,7 @@ export const StickyNavbar = () => {
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center space-x-8">
-              {navLinks.map((link) => (
+              {mainNavLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -80,6 +85,32 @@ export const StickyNavbar = () => {
                   {link.label}
                 </Link>
               ))}
+              
+              {/* Help Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setIsHelpOpen(!isHelpOpen)}
+                  className="flex items-center text-gray-900 hover:text-gray-600 dark:text-white dark:hover:text-white/[90%]"
+                >
+                  Help
+                  <ChevronDownIcon className="w-4 h-4 ml-1" />
+                </button>
+                
+                {isHelpOpen && (
+                  <div className="absolute right-0 mt-2 py-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-xl z-50">
+                    {helpNavLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                        onClick={() => setIsHelpOpen(false)}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
               <button onClick={toggleDarkMode}>
                 {isDarkMode ? (
                   <SunIcon className="w-6 h-6 dark:text-white dark:hover:text-white/[90%]" />
@@ -137,13 +168,25 @@ export const StickyNavbar = () => {
             style={{ top: "64px", height: "calc(100vh - 64px)" }}
           >
             <nav className="px-2 pt-2 pb-3 space-y-1">
-              {navLinks.map((link) => (
+              {mainNavLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-900"
                   onClick={toggleNav}
                   target={link.external ? "_blank" : undefined}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              
+              <div className="px-3 py-2 font-medium text-gray-900 dark:text-white">Help</div>
+              {helpNavLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block px-6 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-900"
+                  onClick={toggleNav}
                 >
                   {link.label}
                 </Link>
