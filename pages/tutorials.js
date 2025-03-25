@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import { StickyNavbar } from "../components/Navbar";
-import { CommunitySection } from '../components/CommunitySection';
+import { CommunitySection } from "../components/CommunitySection";
 import { Footer } from "../components/Footer";
 
 const tutorials = [
@@ -29,15 +29,21 @@ export default function Tutorials() {
       <CommunitySection />
 
       <main className="container mx-auto px-4 pt-24 pb-16">
-        <h1 className="text-3xl font-bold mb-8 dark:text-white">Video Tutorials</h1>
+        <h1 className="text-3xl font-bold mb-8 dark:text-white">
+          Video Tutorials
+        </h1>
         <div className="grid gap-8 max-w-4xl mx-auto">
           {tutorials.map((tutorial) => (
-            <div 
+            <div
               key={tutorial.id}
               className="border dark:border-gray-700 rounded-lg p-6 bg-white dark:bg-gray-800/50"
             >
-              <h3 className="text-xl font-semibold mb-2 dark:text-white">{tutorial.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">{tutorial.description}</p>
+              <h3 className="text-xl font-semibold mb-2 dark:text-white">
+                {tutorial.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                {tutorial.description}
+              </p>
               <div className="aspect-video w-full bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden">
                 <iframe
                   width="100%"

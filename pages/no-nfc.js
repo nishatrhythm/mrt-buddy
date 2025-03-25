@@ -9,9 +9,9 @@ export default function NoNFC() {
     <div className="min-h-screen bg-white dark:bg-[#121212]">
       <Head>
         <title>Check Balance Without NFC - MRT Buddy</title>
-        <meta 
-          name="description" 
-          content="Learn how to check your MRT Pass or Rapid Pass balance online without NFC. A step-by-step guide to using the official DMTCL balance checker." 
+        <meta
+          name="description"
+          content="Learn how to check your MRT Pass or Rapid Pass balance online without NFC. A step-by-step guide to using the official DMTCL balance checker."
         />
       </Head>
       <StickyNavbar />
@@ -24,7 +24,8 @@ export default function NoNFC() {
             No NFC? No Problem!
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
-            Check your MRT Pass / Rapid Pass balance online using the official Rapid Pass website. Here's how to do it step by step.
+            Check your MRT Pass / Rapid Pass balance online using the official
+            Rapid Pass website. Here's how to do it step by step.
           </p>
         </section>
 
@@ -45,14 +46,19 @@ export default function NoNFC() {
                   <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
                     <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg mb-4">
                       <p className="text-sm text-blue-800 dark:text-blue-200">
-                        Note: Although this is the Rapid Pass website, both MRT Pass and Rapid Pass cards should work when their system is online.
+                        Note: Although this is the Rapid Pass website, both MRT
+                        Pass and Rapid Pass cards should work when their system
+                        is online.
                       </p>
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 dark:text-white">Step 1: Visit the Official Website</h3>
+                    <h3 className="text-2xl font-bold mb-4 dark:text-white">
+                      Step 1: Visit the Official Website
+                    </h3>
                     <p className="text-gray-600 dark:text-gray-300 mb-4">
-                      Go to the MRT Pass / Rapid Pass balance checking website at:
+                      Go to the MRT Pass / Rapid Pass balance checking website
+                      at:
                     </p>
-                    <a 
+                    <a
                       href="https://rapidpass.com.bd/index.php/welcome/afc_topup"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -72,9 +78,12 @@ export default function NoNFC() {
                 </div>
                 <div className="w-full lg:w-1/2">
                   <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
-                    <h3 className="text-2xl font-bold mb-4 dark:text-white">Step 2: Enter Your Card Number</h3>
+                    <h3 className="text-2xl font-bold mb-4 dark:text-white">
+                      Step 2: Enter Your Card Number
+                    </h3>
                     <p className="text-gray-600 dark:text-gray-300 mb-4">
-                      Enter your card number in the search field. Both MRT Pass and Rapid Pass cards are supported.
+                      Enter your card number in the search field. Both MRT Pass
+                      and Rapid Pass cards are supported.
                     </p>
                     <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
                       <li>Works with both MRT Pass and Rapid Pass</li>
@@ -93,9 +102,12 @@ export default function NoNFC() {
                 </div>
                 <div className="w-full lg:w-1/2">
                   <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
-                    <h3 className="text-2xl font-bold mb-4 dark:text-white">Step 3: View Your Balance</h3>
+                    <h3 className="text-2xl font-bold mb-4 dark:text-white">
+                      Step 3: View Your Balance
+                    </h3>
                     <p className="text-gray-600 dark:text-gray-300 mb-4">
-                      Click the "Search" button and wait for your balance to appear. Please note:
+                      Click the "Search" button and wait for your balance to
+                      appear. Please note:
                     </p>
                     <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
                       <li>The page may take a while to load</li>
@@ -117,15 +129,16 @@ export default function NoNFC() {
               Want More Features?
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
-              If you have a phone with NFC, try our app for instant balance checks and transaction history!
+              If you have a phone with NFC, try our app for instant balance
+              checks and transaction history!
             </p>
-            <a 
+            <a
               href="/check-balance"
               className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors mr-4"
             >
               Learn More About MRT Buddy App
             </a>
-            <a 
+            <a
               href="/check-balance-bn"
               className="inline-block bg-gray-600 text-white px-8 py-4 rounded-lg hover:bg-gray-700 transition-colors"
             >

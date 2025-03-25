@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export const CommunitySection = () => (
   <section className="w-full py-4 bg-blue-600 text-white text-center">

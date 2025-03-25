@@ -85,7 +85,7 @@ export const StickyNavbar = () => {
                   {link.label}
                 </Link>
               ))}
-              
+
               {/* Help Dropdown */}
               <div className="relative">
                 <button
@@ -95,7 +95,7 @@ export const StickyNavbar = () => {
                   Help
                   <ChevronDownIcon className="w-4 h-4 ml-1" />
                 </button>
-                
+
                 {isHelpOpen && (
                   <div className="absolute right-0 mt-2 py-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-xl z-50">
                     {helpNavLinks.map((link) => (
@@ -179,8 +179,10 @@ export const StickyNavbar = () => {
                   {link.label}
                 </Link>
               ))}
-              
-              <div className="px-3 py-2 font-medium text-gray-900 dark:text-white">Help</div>
+
+              <div className="px-3 py-2 font-medium text-gray-900 dark:text-white">
+                Help
+              </div>
               {helpNavLinks.map((link) => (
                 <Link
                   key={link.href}

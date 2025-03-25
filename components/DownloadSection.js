@@ -14,7 +14,9 @@ export const DownloadSection = ({ handleDownloadClick, isAnimating }) => {
             <img
               src="/play_store_logo.png"
               alt="Download on the Play Store"
-              onClick={() => sendGAEvent({ event: "download", value: "android" })}
+              onClick={() =>
+                sendGAEvent({ event: "download", value: "android" })
+              }
               style={{ width: "150px", height: "auto" }}
             />
           </a>

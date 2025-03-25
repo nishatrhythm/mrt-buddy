@@ -3,8 +3,8 @@ import Head from "next/head";
 import { StickyNavbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { CommunitySection } from "../components/CommunitySection";
-import Papa from 'papaparse';
-import Fuse from 'fuse.js';
+import Papa from "papaparse";
+import Fuse from "fuse.js";
 
 export default function Devices() {
   const [devices, setDevices] = useState([]);
@@ -16,44 +16,44 @@ export default function Devices() {
   const [fuse, setFuse] = useState(null);
 
   useEffect(() => {
-    fetch('/devices.csv')
-      .then(response => response.text())
-      .then(csv => {
+    fetch("/devices.csv")
+      .then((response) => response.text())
+      .then((csv) => {
         const results = Papa.parse(csv, {
           header: true,
-          skipEmptyLines: true
+          skipEmptyLines: true,
         });
-        
+
         // Filter and transform the data to show only relevant columns
-        const filteredData = results.data.map(device => ({
+        const filteredData = results.data.map((device) => ({
           manufacturer: device.Brand || device.Manufacturer,
           model: device["Model Name"] || device.Device,
           device: device.Device,
           soc: device["System on Chip"],
           ram: device["RAM (TotalMem)"],
-          android: device["Android SDK Versions"]
+          android: device["Android SDK Versions"],
         }));
 
         setDevices(filteredData);
         setFilteredDevices(filteredData);
-        
+
         // Add a combined search field and initialize Fuse instance
-        const dataWithCombined = filteredData.map(device => ({
+        const dataWithCombined = filteredData.map((device) => ({
           ...device,
-          combined: `${device.manufacturer} ${device.model}`
+          combined: `${device.manufacturer} ${device.model}`,
         }));
-        
+
         const fuseInstance = new Fuse(dataWithCombined, {
-          keys: ['manufacturer', 'model', 'combined'],
+          keys: ["manufacturer", "model", "combined"],
           threshold: 0.4,
           includeScore: true,
           useExtendedSearch: true,
-          minMatchCharLength: 2
+          minMatchCharLength: 2,
         });
         setFuse(fuseInstance);
         setLoading(false);
       })
-      .catch(err => {
+      .catch((err) => {
         setError("Failed to load device compatibility data");
         setLoading(false);
       });
@@ -63,9 +63,9 @@ export default function Devices() {
     <div className="min-h-screen bg-white dark:bg-[#121212]">
       <Head>
         <title>Compatible Devices - MRT Buddy</title>
-        <meta 
-          name="description" 
-          content="Check if your device is compatible with MRT Buddy. View the list of supported Android devices with NFC capabilities." 
+        <meta
+          name="description"
+          content="Check if your device is compatible with MRT Buddy. View the list of supported Android devices with NFC capabilities."
         />
       </Head>
       <StickyNavbar />
@@ -76,7 +76,7 @@ export default function Devices() {
           <h1 className="text-4xl font-bold mb-6 dark:text-white">
             Compatible Devices
           </h1>
-          
+
           <div className="mb-6 space-y-4">
             <input
               type="text"
@@ -86,16 +86,18 @@ export default function Devices() {
               onChange={(e) => {
                 const query = e.target.value;
                 setSearchQuery(query);
-                
+
                 if (!query.trim()) {
                   setFilteredDevices(showAll ? devices : devices.slice(0, 100));
                   return;
                 }
-                
+
                 if (fuse) {
                   const results = fuse.search(query);
-                  const matchedDevices = results.map(result => result.item);
-                  setFilteredDevices(showAll ? matchedDevices : matchedDevices.slice(0, 100));
+                  const matchedDevices = results.map((result) => result.item);
+                  setFilteredDevices(
+                    showAll ? matchedDevices : matchedDevices.slice(0, 100)
+                  );
                 }
               }}
             />
@@ -107,7 +109,10 @@ export default function Devices() {
                 checked={showAll}
                 onChange={(e) => setShowAll(e.target.checked)}
               />
-              <label htmlFor="showAll" className="ml-2 text-sm text-gray-600 dark:text-gray-300">
+              <label
+                htmlFor="showAll"
+                className="ml-2 text-sm text-gray-600 dark:text-gray-300"
+              >
                 Show all matching devices (instead of top 100)
               </label>
             </div>
@@ -115,16 +120,23 @@ export default function Devices() {
 
           <div className="space-y-4 mb-8">
             <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-              <h2 className="font-semibold mb-2 text-blue-800 dark:text-blue-200">iPhone Compatibility</h2>
+              <h2 className="font-semibold mb-2 text-blue-800 dark:text-blue-200">
+                iPhone Compatibility
+              </h2>
               <p className="text-sm text-blue-800 dark:text-blue-200">
-                All iPhone models from iPhone 7 and newer are compatible with MRT Buddy.
+                All iPhone models from iPhone 7 and newer are compatible with
+                MRT Buddy.
               </p>
             </div>
-            
+
             <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-              <h2 className="font-semibold mb-2 text-blue-800 dark:text-blue-200">Android Compatibility</h2>
+              <h2 className="font-semibold mb-2 text-blue-800 dark:text-blue-200">
+                Android Compatibility
+              </h2>
               <p className="text-sm text-blue-800 dark:text-blue-200">
-                This list shows Android devices that have been tested with MRT Buddy. Any Android device with NFC capabilities should work, even if not listed here.
+                This list shows Android devices that have been tested with MRT
+                Buddy. Any Android device with NFC capabilities should work,
+                even if not listed here.
               </p>
             </div>
           </div>
@@ -164,7 +176,10 @@ export default function Devices() {
                 </thead>
                 <tbody className="divide-y divide-gray-200 dark:divide-gray-600">
                   {filteredDevices.map((device, index) => (
-                    <tr key={index} className="hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <tr
+                      key={index}
+                      className="hover:bg-gray-50 dark:hover:bg-gray-700"
+                    >
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100">
                         {device.manufacturer}
                       </td>

@@ -28,7 +28,9 @@ export default function App({ Component, pageProps }) {
 function MainContent({ Component, pageProps }) {
   const { isDarkMode } = useTheme();
   return (
-    <main className={`${notoSans.className} ${notoSansBengali.className} ${isDarkMode ? "dark" : ""}`}>
+    <main
+      className={`${notoSans.className} ${notoSansBengali.className} ${isDarkMode ? "dark" : ""}`}
+    >
       <Head>
         <script type="application/ld+json">
           {JSON.stringify({

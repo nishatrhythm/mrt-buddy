@@ -10,7 +10,8 @@ export const Features = () => {
     },
     {
       title: "Transaction History",
-      description: "View your complete transaction history with rolling storage*",
+      description:
+        "View your complete transaction history with rolling storage*",
       icon: "📊",
     },
     {
@@ -20,15 +21,17 @@ export const Features = () => {
     },
     {
       title: "Fare Calculator",
-      description: "Calculate your fare and see how many round trips you can make",
+      description:
+        "Calculate your fare and see how many round trips you can make",
       icon: "🔢",
-    }
+    },
   ];
 
-  const footnote = "*While the card stores up to 20 transactions, regularly scanning your card allows you to build a comprehensive history of thousands of transactions on your phone";
+  const footnote =
+    "*While the card stores up to 20 transactions, regularly scanning your card allows you to build a comprehensive history of thousands of transactions on your phone";
 
   return (
-      <section className="py-16 sm:py-24 bg-gray-50 dark:bg-[#121212]/[98%]">
+    <section className="py-16 sm:py-24 bg-gray-50 dark:bg-[#121212]/[98%]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (

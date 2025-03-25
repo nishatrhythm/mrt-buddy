@@ -43,22 +43,20 @@ export default function PrivacyPolicy() {
                 <strong>MRT Buddy</strong> uses Near Field Communication (NFC)
                 technology to read data from your transit cards. The app
                 accesses the balance and trip information stored directly on the
-                card itself. To enhance your experience and provide a more complete 
-                usage history, the app now stores transaction data from your transit 
-                cards on your device. This allows you to accumulate more records 
-                over time as you scan your card.
+                card itself. To enhance your experience and provide a more
+                complete usage history, the app now stores transaction data from
+                your transit cards on your device. This allows you to accumulate
+                more records over time as you scan your card.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold mb-4">
-                3. Data Storage
-              </h2>
+              <h2 className="text-2xl font-semibold mb-4">3. Data Storage</h2>
               <p className="text-gray-700 dark:text-gray-50">
-                All transaction data collected from your transit cards is stored 
-                locally on your device. We do not collect, store, or transmit any 
-                of your personal data to our servers or any third parties. The data 
-                never leaves your device.
+                All transaction data collected from your transit cards is stored
+                locally on your device. We do not collect, store, or transmit
+                any of your personal data to our servers or any third parties.
+                The data never leaves your device.
               </p>
             </div>
 
@@ -77,7 +75,7 @@ export default function PrivacyPolicy() {
               <h2 className="text-2xl font-semibold mb-4">4. Data Sharing</h2>
               <p className="text-gray-700 dark:text-gray-50">
                 Since we do not collect or store any of your personal
-                information on our servers, we do not share any data with third 
+                information on our servers, we do not share any data with third
                 parties. All data remains on your device.
               </p>
             </div>
@@ -85,11 +83,11 @@ export default function PrivacyPolicy() {
             <div>
               <h2 className="text-2xl font-semibold mb-4">5. Data Security</h2>
               <p className="text-gray-700 dark:text-gray-50">
-                While our app stores transaction data on your device to provide 
-                you with an extended usage history, we are committed to ensuring 
-                that your information remains secure. The app only accesses and 
-                retains the necessary data to enhance your experience. We recommend 
-                securing your device to prevent unauthorized access.
+                While our app stores transaction data on your device to provide
+                you with an extended usage history, we are committed to ensuring
+                that your information remains secure. The app only accesses and
+                retains the necessary data to enhance your experience. We
+                recommend securing your device to prevent unauthorized access.
               </p>
             </div>
 
@@ -117,18 +115,22 @@ export default function PrivacyPolicy() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold mb-4">
-                8. Changelog
-              </h2>
+              <h2 className="text-2xl font-semibold mb-4">8. Changelog</h2>
               <div className="text-gray-700 dark:text-gray-50">
                 <ul className="list-disc pl-5 space-y-2">
                   <li>
                     <strong>November 13, 2024:</strong>
                     <ul className="list-circle pl-5 mt-1">
                       <li>Added local storage for transaction history</li>
-                      <li>Updated Data Collection and Use section to reflect new storage functionality</li>
+                      <li>
+                        Updated Data Collection and Use section to reflect new
+                        storage functionality
+                      </li>
                       <li>Added new Data Storage section</li>
-                      <li>Updated Data Security section with device security recommendations</li>
+                      <li>
+                        Updated Data Security section with device security
+                        recommendations
+                      </li>
                     </ul>
                   </li>
                 </ul>

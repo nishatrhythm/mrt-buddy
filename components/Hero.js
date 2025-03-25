@@ -24,15 +24,17 @@ export const Hero = ({ handleDownloadClick, isAnimating }) => {
             </h1>
           </motion.div>
           <p className="text-lg sm:text-xl text-gray-600 leading-relaxed dark:text-white">
-            Manage your Dhaka MRT and Rapid Pass cards, check fares, and track your journeys with
-            ease using your NFC-enabled Smartphone
+            Manage your Dhaka MRT and Rapid Pass cards, check fares, and track
+            your journeys with ease using your NFC-enabled Smartphone
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <a href="https://play.google.com/store/apps/details?id=net.adhikary.mrtbuddy">
               <img
                 src="/play_store_logo.png"
                 alt="Download on the Play Store"
-                onClick={() => sendGAEvent({ event: "download", value: "android" })}
+                onClick={() =>
+                  sendGAEvent({ event: "download", value: "android" })
+                }
                 style={{ width: "150px", height: "auto" }}
               />
             </a>
@@ -46,10 +48,13 @@ export const Hero = ({ handleDownloadClick, isAnimating }) => {
             </a>
           </div>
           <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
-             <Link href="/devices" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-               Check if your device is compatible →
-             </Link>
-           </p>
+            <Link
+              href="/devices"
+              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              Check if your device is compatible →
+            </Link>
+          </p>
           <div className="mt-6 inline-block">
             <Link
               href="/tutorials"
